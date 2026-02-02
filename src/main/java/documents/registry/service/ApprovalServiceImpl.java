@@ -36,7 +36,7 @@ public class ApprovalServiceImpl implements ApprovalService {
                 return new ApprovalResponse(request.documentExternalId(), ApprovalStatuses.APPROVED);
             });
         } catch (Exception e) {
-            log.info("Approval rejected for Document " + request.documentExternalId());
+            log.info("Approval rejected for Document " + request.documentExternalId(), e);
             return new ApprovalResponse(request.documentExternalId(), ApprovalStatuses.REJECTED);
         }
 
