@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-approvals-table
+      author: IlyaShardakov
+      changes:
+        - createTable:
+            schemaName: data
+            tableName: approvals
+            remarks: "Реестр утверждений документов"
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  remarks: "Внутренний идентификатор"
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: created
+                  type: timestamp
+              - column:
+                  name: updated
+                  type: timestamp
+              - column:
+                  name: document_external_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+                    unique: true
+              - column:
+                  name: commentary
+                  type: text

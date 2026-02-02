@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5434/registry
+    username: postgres_user2
+    password: ochen_silnii_parol2
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
